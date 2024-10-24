@@ -15,9 +15,33 @@
 # SALVADOS POR LA CABRA, SALVADOS POR SHUB-NIGGURATH
 # Podéis tener en cuenta que el día 1 de Enero siempre es luna llena.
 
-NUMERO_CACHORROS=$(($RANDOM%9+1))
-echo $NUMERO_CACHORROS
+total=0
+cumplido=0
+llena=0
 
+for i in $(seq 365); do
 
+	NUMERO_CACHORROS=$(($RANDOM%9+1))
+
+	((total += NUMERO_CACHORROS))
+
+	if ((i % 28 == 0)) || ((i == 1)); then
+		llena=1
+	else
+		llena=0
+	fi
+
+	if ((NUMERO_CACHORROS % 3 == 0)); then
+		if  ((llena != 1)); then
+			((cumplido ++))
+		else
+			echo "SALVADOS POR LA CABRA, SALVADOS POR SHUB-NIGGURATH"
+		fi
+	fi
+
+done
+
+echo "numero de cachorros totales: $total"
+echo "numero de rituales cumplidos: $cumplido"
 
 exit 0
