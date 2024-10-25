@@ -1,0 +1,39 @@
+name: Check User Folder Changes
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-user-folder:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Check for user folder changes
+      run: |
+        USERNAME=$(echo "${{ github.actor }}" | tr '[:upper:]' '[:lower:]')
+        ALLOWED_FOLDER=""
+
+        case $USERNAME in
+          "0ashleeyy2")
+            ALLOWED_FOLDER="ashley"
+            ;;
+          "Lunaval156")
+            ALLOWED_FOLDER="luna"
+            ;;
+          "nissk8")
+            ALLOWED_FOLDER="nis"
+            ;;
+        esac
+
+      if [[ "$USERNAME" != "iprimavera" ]] && git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -v "^$ALLOWED_FOLDER/"; then
+          echo "Error: $USERNAME solo puede hacer cambios en '$ALLOWED_FOLDER/'."
+          exit 1
+      fi
