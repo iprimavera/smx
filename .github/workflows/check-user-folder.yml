@@ -31,9 +31,12 @@ jobs:
           "nissk8")
             ALLOWED_FOLDER="nis"
             ;;
+          "iprimavera")
+            ALLOWED_FOLDER="."
+            ;;
         esac
 
-      if [[ "$USERNAME" != "iprimavera" ]] && git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -v "^$ALLOWED_FOLDER/"; then
+        if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -v "^$ALLOWED_FOLDER/"; then
           echo "Error: $USERNAME solo puede hacer cambios en '$ALLOWED_FOLDER/'."
           exit 1
-      fi
+        fi
