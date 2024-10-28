@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo -n "Dime un año:"
+read año
+
+let op1=$año%4
+let op2=$año%100
+let op3=$año%400
+
+echo "
