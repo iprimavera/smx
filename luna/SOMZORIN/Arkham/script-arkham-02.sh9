@@ -13,14 +13,14 @@ let t=$MINU/5
 
 if [ $t -eq 0 -o $t -eq 3 -o $t -eq 6 -o $t -eq 9 ]; then
 
-	ln -s $HOME/Arkham/Hangares/Terrar $HOME/Arkham/Hangares/Habilitado
+	ln -s $HOME/Arkham/Hangares/Habilitado/Terrar
 
 elif [ $t -eq 1 -o $t -eq 4 -o $t -eq 7 -o $t -eq 10 ]; then
 
-	ln -s $HOME/Arkham/Hangares/Profur $HOME/Arkham/Hangares/Habilitado
+	ln -s $HOME/Arkham/Hangares/Habilitado/Profur
 
 else
-	ln -s $HOME/Arkham/Hangares/Medea $HOME/Arkham/Hangares/Habilitado
+	ln -s $HOME/Arkham/Hangares/Habilitado/Medea
 
 fi
 
