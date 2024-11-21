@@ -12,7 +12,7 @@ while ($true) {
         1 {
             $proceso = Read-Host "Ingresa el PID"
             try {
-                Get-Process -Id $proceso -ErrorAction Stop | Select-Object ProcessName, CPU
+                Get-Process -Id $proceso -ErrorAction Stop | Select-Object ProcessName, CPU | Format-List
             }
             catch {
                 Write-Host "No hay ningun proceso activo con ese id" -ForegroundColor Red
@@ -21,7 +21,7 @@ while ($true) {
         2 {
             $proceso = Read-Host "Ingresa el PID"
             try {
-                Get-Process -Id $proceso -ErrorAction Stop | Select-Object ProcessName, Path
+                Get-Process -Id $proceso -ErrorAction Stop | Select-Object ProcessName, Path | Format-List
             }
             catch {
                 Write-Host "No hay ningun proceso activo con ese id" -ForegroundColor Red
