@@ -1,13 +1,13 @@
-while ($true) {
-    Write-Host "dime el nombre de una carpeta"
-    $carpeta = Read-Host
+Write-Host "Dime el nombre de la carpeta: "
+$carpeta = Read-Host
 
-    if (Test-Path $HOME/$carpeta) {
-        Get-ChildItem $HOME/$carpeta
-    } elseif ($carpeta -eq "q") {
-        exit
-    } else {
-        Write-Host "esa carpeta no existe"
-    }
+if ( Test-Path $carpeta ){
 
+    Write-Host "La carpeta $carpeta existe"
+
+}else{
+
+    Write-Host "La carpeta $carpeta no existe"
+    New-Item -ItemType Directory -Name $carpeta -Path 'C:\Users\Usuario\Desktop\SOM\'
 }
+

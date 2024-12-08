@@ -1,0 +1,3 @@
+Get-ChildItem -recurse | measure -sum Length
+
+#muestra el total de bytes que ocupa todo lo que hay en un directorio especificado.

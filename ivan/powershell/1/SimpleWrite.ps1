@@ -1,10 +1,10 @@
-# Verificar si el script se está ejecutando como administrador
-if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    # Si no es administrador, reiniciar el script como administrador
-    Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
-    exit
+$contador = 0
+
+while ( $contador -lt 20 ){
+
+    Write-Host "Dime un numero: "
+    $num = Read-Host
+    $contador = $contador + $num
+
 }
-
-# Aquí colocas el resto de tu script que necesita permisos de administrador
-
-Read-Host "pulsa enter para terminar"
+Write-Host "Hemos llegado a $contador que es mayor o igual que 20"
