@@ -1,0 +1,20 @@
+#Ejecutando estos dos comandos, compara sus resultados y 
+#explica con tus palabras qué es lo que muestran y 
+#sus diferencias.
+
+#Get-AppxPackage –AllUsers | Select Name, PackageFullName
+#Get-WmiObject -Class Win32_InstalledWin32Program
+
+El primer comando se centra en listarme las aplicaciones 
+que se descargan desde la Tienda de Microsoft que se instalan
+en el sistema, y lo hace para todos los usuarios.
+Mostrandonos en la salida el nombre de la aplicación y su 
+nombre completo de paquete.
+
+En cambio,el segundo obtiene informacion sobre programas 
+instalados en el sistema, incluyendo aplicaciones más
+tradicionales,refiriendonos a Word,Excel,PowerPoint,Google
+Chrome,Mozilla Firefox...
+
+
+
