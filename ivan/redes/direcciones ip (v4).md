@@ -29,3 +29,5 @@
 | Definición  |                                           |                         |
 | Visibilidad | Accesible desde cualquier lugar del mundo | Limitada a la red local |
 | Uso         |                                           |                         |
+mascara de red a todo unos indica que es una ip unica sin posibilidad de incluir otros host en la red
+la mascara de red no puede estar nunca todo a ceros
