@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "direcciones ip (v4).md",
+                "file": "redes/direcciones ip (v4).md",
                 "mode": "source",
                 "source": false
               },
@@ -175,6 +175,7 @@
   },
   "active": "1f23ddd6953dc1ea",
   "lastOpenFiles": [
-    "direcciones ip (v4).md"
+    "redes",
+    "redes/direcciones ip (v4).md"
   ]
 }
