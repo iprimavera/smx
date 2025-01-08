@@ -34,6 +34,7 @@ la mascara de red no puede estar nunca todo a ceros
 
 la mascara de red funciona con el `/x` y x es el número de unos en la mascara
 
-para saber cuantas subredes hay tenemos que ver los unos que están con ceros en la mascara, y si tenemos dos unos por ejemplo pues es dos elevado a dos, si no hay ninguno se le añade uno.
+para saber cuantas subredes hay tenemos que ver los unos que están con ceros en la mascara, y si tenemos dos unos por ejemplo pues es dos elevado a dos.
 
 para saber los host que hay en cada subred se hace lo mismo pero con los ceros, y a eso se le resta dos, porque están reservadas.
+
