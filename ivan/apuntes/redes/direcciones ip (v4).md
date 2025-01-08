@@ -40,4 +40,4 @@ para saber los host que hay en cada subred se hace lo mismo pero con los ceros, 
 
 para contar la dirección de las subredes lo que haces es escribir las IP con cada combinación de los unos que corresponden a las subredes
 
-para saber el rango siempre hay que quitarle la primera y la última dirección porque están reservadas en los host
+para saber el rango siempre hay que quitarle la primera y la última dirección porque están reservadas en los host, la última es la de broadcast
