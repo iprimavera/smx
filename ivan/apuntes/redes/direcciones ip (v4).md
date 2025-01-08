@@ -38,3 +38,6 @@ para saber cuantas subredes hay tenemos que ver los unos que están con ceros en
 
 para saber los host que hay en cada subred se hace lo mismo pero con los ceros, y a eso se le resta dos, porque están reservadas.
 
+para contar la dirección de las subredes lo que haces es escribir las IP con cada combinación de los unos que corresponden a las subredes
+
+para saber el rango siempre hay que quitarle la primera y la última dirección porque están reservadas en los host
