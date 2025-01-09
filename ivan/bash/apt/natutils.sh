@@ -4,34 +4,50 @@
 # fichero que puede ser leído por el usuario. En caso de que alguno de los
 # binarios no tenga manual, mostrar un mensaje que lo indique.
 
-paquetes=$(dpkg -L coreutils)
-bina=$(dpkg -L coreutils | grep '/bin/')
+read -p "escribe el paquete que comprobar: " elegido
+
+#if [ $(dpkg -l) ]
+
+paquetes=$(dpkg -L $elegido)
+cosos=$(dpkg -L $elegido | grep '/man1/')
 
 for i in $paquetes; do
 	
 	if [[ $i == *'/bin/'* ]]; then
-		a+=(${i##*/})
+		binarios+=(${i##*/})
 	fi
 	
 	if [[ $i == *'/man1/'* ]]; then
-		b+=(${"${i##*/}"%.*})
+		base=${i##*/}
+		manes+=(${base%.1.*})
 
 	fi
 	
 done
+for x in ${binarios[@]}; do
 
-contador=0
-
-for i in ${a[@]}; do
-	echo ${b[$contador]}
-	echo $i
-	if [[ ${b[$contador]} == "$i" ]]; then
-		echo si
+	encontrado="no"
+	
+	for i in ${manes[@]}; do			
+		if [[ "$x" == "$i" ]]; then
+			encontrado="si"	
+		fi
+	done
+	
+	if [ $encontrado == "no" ]; then
+		echo "no se ha encontrado el manual de " $x
+		exit 1
 	fi
-	((contador++))
+
 done
 
-echo ${#a}
-echo ${#b}
+for i in $cosos; do
+	if [ ! -r $i ]; then
+		echo "el manual $i no es legible por el usuario"
+		exit 1
+	fi
+done
+
+echo "el paquete contiene todos sus manuales y es legible"
 
 exit 0
