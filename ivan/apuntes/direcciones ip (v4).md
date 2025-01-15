@@ -19,10 +19,10 @@
 
 
 - Diferencias entre direcciones publicas y privadas
-	- una direccion ip privada se utiliza dentro de una red privada para conectarse de forma segura a otros dispositivos dentro de esa misma red
-	- una direccion ip publica te identifica ante el resto de internet para que toda la informacion que buscas pueda encontrarte.
-	- Ejemplo: utilizar una ip publica para conectarse a internet, es como utilizar un apartado de correos para el correo postal, en vez de dar la direccion de tu casa.
-	- Una ip privada es la direccion que tu router asigna a tu dispositivo
+	- una dirección IP privada se utiliza dentro de una red privada para conectarse de forma segura a otros dispositivos dentro de esa misma red
+	- una dirección IP publica te identifica ante el resto de internet para que toda la información que buscas pueda encontrarte.
+	- Ejemplo: utilizar una IP publica para conectarse a internet, es como utilizar un apartado de correos para el correo postal, en vez de dar la dirección de tu casa.
+	- Una ip privada es la dirección que tu router asigna a tu dispositivo
 
 |             | IP publica                                | IP privada              |
 | ----------- | ----------------------------------------- | ----------------------- |
@@ -41,3 +41,7 @@ para saber los host que hay en cada subred se hace lo mismo pero con los ceros, 
 para contar la dirección de las subredes lo que haces es escribir las IP con cada combinación de los unos que corresponden a las subredes
 
 para saber el rango siempre hay que quitarle la primera y la última dirección porque están reservadas en los host, la última es la de broadcast
+
+los host totales sin restar nada se llaman bloque de subred o salto de subred
+
+para sacar una subred específica se multiplica el tamaño del bloque por el número de la subred, 
